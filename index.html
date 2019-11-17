@@ -6,7 +6,11 @@
   </head>
   <body>
     <p>jQueryの練習</p>
-    <button type="button" name="button">もっと読む</button>
+    <!-- <button type="button" name="button">もっと読む</button> -->
+    <p>
+      <input type="text" name="name" id="name">
+      <input type="button" id="greet" value="Greet!">
+    </p>
     <div id="result">
 
     </div>
@@ -163,9 +167,19 @@
         // Ajax
         // Asynchronous JavaScript + XML
         // サーバと通信＋ページの書き換え
-        $('button').click(function(){
+        // 非同期： 処理が終わる前に次の処理に移る
+        // $.post
+        // $.get
+        /* $('button').click(function(){
           $('#result').load('more.html', function(){
             $('#message').css('color', 'red');
+          });
+        }); */
+        $('#greet').click(function(){
+          $.get('greet.php',{
+            name: $('#name').val()
+          }, function(){
+            $('#result').html(data);
           });
         });
       });
