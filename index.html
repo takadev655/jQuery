@@ -179,7 +179,7 @@
           $.get('greet.php',{
             name: $('#name').val()
           }, function(data){
-            $('#result').html(data);
+            $('#result').html(data.message + '(' + data.length + ')');
           });
         });
       });
