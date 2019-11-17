@@ -164,7 +164,9 @@
         // Asynchronous JavaScript + XML
         // サーバと通信＋ページの書き換え
         $('button').click(function(){
-          $('#result').load('more.html');
+          $('#result').load('more.html', function(){
+            $('#message').css('color', 'red');
+          });
         });
       });
     </script>
