@@ -178,7 +178,7 @@
         $('#greet').click(function(){
           $.get('greet.php',{
             name: $('#name').val()
-          }, function(){
+          }, function(data){
             $('#result').html(data);
           });
         });
